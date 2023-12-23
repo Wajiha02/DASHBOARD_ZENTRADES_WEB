@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #313030;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        form {
+            background-color:#141414;
+            padding: 8px;
+            border-radius: 6px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 70px;
+        margin-left: 97px;
+        margin-right: 97px;
+        }
+
+        div{
+            background-color: #141414;
+            border-radius: 8px;
+            padding-bottom: 75px;
+            padding-top: 75px;
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+        label {
+            display: block;
+            margin-bottom: 1px;
+            color:white
+           
+        }
+        input {
+            width: 80%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+            border-radius:6px;
+        }
+        button {
+            background-color: #208724;
+            color: #fff;
+            padding: 5px 40px;
+            width: 80%;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        .centered-image {
+            width: 300px; 
+            height: auto; 
+           padding: 10px;
+           margin-inline: 100px;
+           background-color: #141414;
+        }
+        .container {
+            text-align: center;
+            margin: 70 auto;
+            
+        }
+        .Forgot {
+            color: rgb(135, 135, 135);
+           
+        }
+        h1{
+            color:rgb(46, 166, 46);
+        
+        }
+        #message {
+            color: red;
+            margin-top: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <img src="C:\Users\hp\Pictures\Screenshots\Screenshot 2023-12-22 173712.png" alt="Image above form" class="centered-image">
+    <!-- <h1>SMARTSERV</h1> -->
+    
+<form onsubmit="return validateForm()">
+   <label for="username"></label>
+    <input type="text" id="username" name="username" placeholder="Username" required>
+  
+    <label for="password"></label>
+    <input type="password" id="password" name="password" placeholder="Password" required>
+
+    <button type="submit">Login</button> <p id="message"></p>
+    
+    <a href="mailto:support@smartserv.io" class="Forgot">Forgot your password?</a>
+</form>
+</div>
+
+<script>
+    function validateForm()  {
+        var username = document.getElementById('username').value;
+        var password = document.getElementById('password').value;
+        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        var passwordRegex = /^(?=.*[A-Z])(?=.*\d)(?=.*[@])[A-Za-z\d@]+$/;
+
+
+        if (!emailRegex.test(username)) {
+            document.getElementById('message').innerText = 'Please enter a valid email address.';
+            return false;
+        } 
+
+        if (!passwordRegex.test(password)) {
+            document.getElementById('message').innerText ='Password must contain an uppercase letter, a number, and @.';
+            return false;
+        }
+
+        if (password === 'SmartServTest@123') {
+            window.location.href = 'https://app.powerbi.com/groups/me/reports/2a2a9ad8-fd29-4278-a4fd-8de9a99701ab/ReportSection?experience=power-bi';
+        } 
+        else {
+            document.getElementById('message').innerText = 'Incorrect password.';
+            return false;
+    }
+} 
+    
+</script>
+
+</body>
+</html>
